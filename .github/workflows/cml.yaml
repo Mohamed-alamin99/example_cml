@@ -1,0 +1,12 @@
+name: get the data 
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v1
+      - name: Get data
+        run: |
+          pip install -r requirements.txt
+          python get_data.py
